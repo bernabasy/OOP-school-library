@@ -7,6 +7,7 @@ class Classroom
   end
 
   def add_students(student)
-    @students.push.student
+    @students << student
+    student.classroom = self
   end
 end
