@@ -19,7 +19,7 @@ class Person < Nameable
   attr_accessor :name, :age, :rentals
 
   def add_rentals(date, book)
-    @Rental.new(date, self, book)
+    Rental.new(date, self, book)
   end
 
   def can_use_services?
