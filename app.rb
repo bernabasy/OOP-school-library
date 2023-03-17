@@ -71,4 +71,14 @@ class App
     @rentals << Rental.new(@people[person.to_i], @books[book.to_i], date)
   end
 
+  def list_rental(id)
+    book_rent = ''
+    @rentals.each do |rental|
+      if id.to_i == rental.person.id
+        book_rent += "#{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author} \n"
+      end
+    end
+    puts 'There is no rental for the selected id' if book_rent.empty?
+    print book_rent
+  end
 end
