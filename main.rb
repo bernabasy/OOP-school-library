@@ -95,3 +95,10 @@ def parameter_option(parameter)
   option_method = options[parameter] || method(:invalid_option)
   option_method.call
 end
+
+def main
+  app = App.new
+  app.begin_console
+end
+
+main
