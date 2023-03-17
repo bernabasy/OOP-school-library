@@ -29,3 +29,22 @@ class App
     puts 'Books shelf is empty.' if @books.empty?
     @books.each { |book| puts "Title: \"#{book.title}\" Author: #{book.author}" }
   end
+
+  def create_person(checker, age, name, parent_permission)
+    @people << if checker == 1
+                 Student.new(checker, age, parent_permission, name)
+               else
+                 Teacher.new(parent_permission, age, name)
+               end
+  end
+
+  def list_people()
+    puts 'There are no people to list.' if @people.empty?
+    @people.each do |person|
+      if person.is_a?(Student)
+        puts "[Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      else
+        puts "[Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
+  end
