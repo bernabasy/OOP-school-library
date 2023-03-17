@@ -48,3 +48,27 @@ class App
       end
     end
   end
+
+  def list_rent_books
+    return 'empty' if @books.empty?
+
+    @books.each_with_index { |book, index| puts "#{index}) Title: \"#{book.title}\" Author: #{book.author}" }
+  end
+
+  def list_rent_people
+    return 'empty' if @people.empty?
+
+    @people.each_with_index do |person, index|
+      if person.is_a?(Student)
+        puts "#{index}) [Student] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      else
+        puts "#{index}) [Teacher] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+      end
+    end
+  end
+
+  def create_rental(person, book, date)
+    @rentals << Rental.new(@people[person.to_i], @books[book.to_i], date)
+  end
+
+end
