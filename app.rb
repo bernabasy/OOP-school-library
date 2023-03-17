@@ -20,3 +20,12 @@ class App
       break if i == '7'
     end
   end
+
+  def create_book(title, author)
+    @books << Book.new(title, author)
+  end
+
+  def list_books()
+    puts 'Books shelf is empty.' if @books.empty?
+    @books.each { |book| puts "Title: \"#{book.title}\" Author: #{book.author}" }
+  end
