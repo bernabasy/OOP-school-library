@@ -1,11 +1,12 @@
 require './person'
 
-class Student < person
+class Student < Person
   attr_reader :classroom
 
-  def initialize(classroom, age, name = 'Unknown', parent_permission: true)
+  def initialize(checker, classroom, age, name = 'Unknown', parent_permission: true)
     super(age, name, parent_permission)
     @classroom = classroom
+    @checker = checker
   end
 
   def play_hooky
