@@ -54,7 +54,6 @@ The key features of this website include.
 
  - **Add new students or teachers**
 - **Add new books**
-- **Add new books**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
